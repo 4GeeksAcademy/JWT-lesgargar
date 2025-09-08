@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import rigoImageUrl from "../assets/img/rigo-baby.jpg";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
 
@@ -34,19 +35,13 @@ export const Home = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<h1 className="display-4">Hello Rigo!!</h1>
-			<p className="lead">
-				<img src={rigoImageUrl} className="img-fluid rounded-circle mb-3" alt="Rigo Baby" />
-			</p>
-			<div className="alert alert-info">
-				{store.message ? (
-					<span>{store.message}</span>
-				) : (
-					<span className="text-danger">
-						Loading message from the backend (make sure your python 🐍 backend is running)...
-					</span>
-				)}
+			<h1>Welcome !</h1>
+			<img src="https://img.freepik.com/vector-gratis/casa-tradicional-puerta-diseno-ilustrador-vectorial_24640-46690.jpg" />
+			<div className="d-flex justify-content-center">
+				<Link to='/signup' className="btn btn-success rounded m-3">Signup</Link>
+				<Link to='/login' className="btn btn-success rounded m-3">Login</Link>
 			</div>
+
 		</div>
 	);
 }; 
